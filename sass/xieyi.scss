@@ -1,0 +1,37 @@
+@charset "UTF-8";
+	@import "base";
+	@import "ext/btn";
+
+	$fontClassoutput:left-normal close;   
+	@import "ext/font-face/font-face";
+
+
+.header{
+	line-height:.86rem;
+	background-color:#fafafa;
+	border-bottom:1px solid #efefef;
+	color:#2d2d2d;
+	text-align:center;
+	font-size:.28rem;
+	a{
+		@include float();
+		line-height:.86rem;
+		margin-left:.7rem;
+		&:before{
+			font-size:.18rem;
+		}	}
+}
+.container{
+	font-size:.16rem;
+	padding:.5rem .5rem 0;
+}
+.btn-primary{
+	display:block;
+	margin:.2rem  .25rem;
+	padding:0;
+	line-height: 1rem;
+	font-size:.3rem;
+	border-radius: $baseRadius;
+	color: $white;
+	@include prefixer(border-radius, $baseRadius);
+}

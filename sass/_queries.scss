@@ -1,0 +1,83 @@
+@charset "UTF-8";
+//-----------------------------------------------------  
+
+@include min-screen(641px) {
+   html{
+   		font-size: 100px;
+   }
+}
+@include max-screen(640px) {
+   html{
+   		font-size: 100px;
+   }
+}
+@include max-screen(608px) {
+   html{
+   		font-size: 95px;
+   }
+}
+@include max-screen(576px) {
+   html{
+   		font-size: 90px;
+   }
+}
+@include max-screen(544px) {
+   html{
+   		font-size: 85px;
+   }
+}
+@include max-screen(512px) {
+   html{
+   		font-size: 80px;
+   }
+}
+@include max-screen(480px) {
+   html{
+   		font-size: 75px;
+   }
+}
+@include max-screen(448px) {
+   html{
+   		font-size: 70px;
+   }
+}
+@include max-screen(416px) {
+   html{
+   		font-size: 65px;
+   }
+}
+@include max-screen(384px) {
+   html{
+         font-size: 60px;
+   }
+}
+@include max-screen(352px) {
+   html{
+         font-size: 55px;
+   }
+}
+@include max-screen(320px) {
+   html{
+         font-size: 50px;
+   }
+}
+
+
+
+
+
+// // @include max-screen(384px) {
+// //    html{
+// //    		font-size: 60px;
+// //    }
+// // }
+// // @include max-screen(352px) {
+// //    html{
+// //    		font-size: 55px;
+// //    }
+// // }
+// @include max-screen(320px) {
+//    html{
+//    		font-size: 60px;
+//    }
+// }

@@ -1,0 +1,483 @@
+@charset "UTF-8";
+@import "base";
+@import "ext/btn";
+$fontClassoutput:max mini home share up-row arrow-right up down tieba weixin share zan-before zan-after smile flag qqzone weibo voice right-normal rmb msg;   
+@import "ext/font-face/font-face";
+	$bg-color: #fafafa ;
+	$red : #e85f4d ;
+	$gray: #888 ;
+.container{
+	@extend %center-block;
+	max-width:1024px;
+}
+.title{
+	font-size:22px;
+	@include rem(padding-top,.45);
+	i{
+		color: $green;
+	}
+}
+.top-notice{
+	@include rem-font-size(.24);
+	@include rem(line-height,.65);
+	@include rem(padding-left,.2);
+	@include rem(padding-right,.2);
+	color:$blue;
+	display:none;
+	span{
+		color:#686868;
+	}
+	a{
+		color:$blue;
+	}
+	.pm{
+		@include rem(margin-left,.1);
+	}
+}
+.area{
+	@include rem(padding-left,.4);
+	@include rem(padding-right,.4);
+}
+.pic-w{
+		position:relative;
+		width:450px;
+		// @include rem(min-height,3.95);
+		i{
+			position:absolute;
+			top:50%;
+			left:50%;
+			display:block;
+			width:40px;
+			height:40px;
+			margin-left:-20px;
+			margin-top:-20px;
+			background-color:$white;
+			cursor: pointer;
+			@include opacity($opacity:80);
+			@include prefixer(border-radius, 50%);
+			text-align: center;
+			&:before{
+				display:block;
+				width:100%;
+				height:100%;
+				line-height:40px ;
+				text-align: center;
+				font-size:20px;
+			}
+		}
+	}
+.area-one{
+	.pic-w{
+		img{
+			width:100%;
+		}
+	}
+	.intro{
+		@include rem(margin-left,.4);
+		@include rem-font-size(.2);
+		.photo{
+			display:block;
+			@include rem(width,1);
+			color: $black;
+			a{
+				display:block;
+				@include rem(width,1);
+				text-align: center;
+
+			}
+			img{
+				display:block;
+				width:100%;
+				@include prefixer(border-radius,50%);
+				border: 2px solid $white;
+			}
+		}
+		li{
+			@include rem-font-size(.12);
+			@include rem(margin-bottom,.2);
+		}
+		b{
+			display:block;
+			@include rem-font-size(.2);
+		}
+		
+	}
+	.mobile-detail{
+		display:none;
+		li{
+			@extend %inline-block;
+		}
+	}
+}
+.btn-primary{
+	@include rem(width,1.6);
+	@include rem(line-height,.4);
+	@include rem-font-size(.2);
+	@include prefixer(border-radius, $baseRadius);
+	padding:0;
+}
+.share-area{
+		margin-top:45px;
+		margin-bottom:60px;
+		font-size:18px;
+		line-height:30px;
+		text-align: center;
+		a{
+			@extend %inline-block;
+			vertical-align: middle;
+			width:30px;
+			height:30px;
+			margin-right:18px;
+			font-size:30px;
+			@include prefixer(border-radius, 50%);
+			text-align: center;
+			background-color: $white;
+			&:hover{
+				text-decoration: none;
+			}
+			&:before{
+				display:block;
+				width:100%;
+				height:100%;
+				line-height:30px;
+			}
+			&.icon-weibo{
+				color:#e0483d
+			}
+			&.icon-weixin{
+				color:#00d154;
+
+			}
+			&.icon-qqzone{
+				color:#ebbf38;
+			}
+			&.icon-tieba{
+				background-color:#1a94e8;
+				color: $white;
+				@include rem-font-size(.18);
+			}
+			&.icon-share{
+				background-color:#555;
+				color: $white;
+				@include rem-font-size(.16);
+			}
+		}
+	}
+
+.content{
+	width:450px;
+	h2{
+		position:relative;
+		line-height: 50px;
+		font-size:14px;
+		width:100%;
+		background-color:$bg-color;
+		&:before{
+			margin-left:18px;
+			margin-right:10px;
+			color: $green;
+		}
+		&:after{
+			@extend .icon-right-normal:before;
+			position:absolute;
+			top:0;
+			right:15px;
+			color:#ccc;
+			line-height: 50px;
+		}
+	}
+	.obj-t{
+		position:relative;
+		z-index:$zindexDropdown;
+		@include rem(line-height,.5);
+		text-align: right;
+		span{
+				cursor: pointer;
+			}
+		.obj-class{
+			position:absolute;
+			@include rem(left,.1);
+			b{
+				@include rem(margin-left,.1);
+				@include rem-font-size(.1);
+				vertical-align: middle;
+			}
+			.filter-list{
+				position:absolute;
+				top:60px;
+				border:1px solid $border-color;
+				text-align: center;
+				width:218px;
+				line-height: 59px;
+				font-size:18px;
+				background-color: $white;
+				span{
+					position:absolute;
+					top:-14px;
+					left:27px;
+					width:13px;
+					height:13px;
+					background:url(../images/t_b.png) no-repeat center;
+					border-bottom:1px solid $white;
+					display:block;
+				}
+			}
+			
+		}
+		.filter{
+			display:inline-block;
+			@include rem(width,.66);
+			@include rem(line-height,.28);
+			@include rem-font-size(.14);
+			text-align: center;
+			border-radius: $baseRadius;	
+			border:1px solid $white;
+			b{
+				@extend %inline-block;
+				&:before{
+						@include rem-font-size(.12);
+					}
+			}
+		}
+		.on{
+			color:$green;
+			border:1px solid #eaeaea;
+		}
+	}
+	.area-obj{
+		ul{
+			li{
+				width:220px;
+				border:1px solid $border-color;
+				line-height: 1.85;
+				@include rem-font-size(.18);
+				@include rem(margin-right,.07);
+				@include rem(margin-bottom,.15);
+				@include float();
+				a{
+					color: $grayDarker;
+					&:hover{
+						color: $blue;
+					}
+				}
+				img{
+					width:100%;
+					@include rem(height,1.36);
+				}
+				.obj-name{
+					display:block;
+					@include rem(padding-left,.07);
+					@include rem(padding-right,.07);
+					@include rem(height,.70);
+				    overflow : hidden;
+				 	text-overflow: ellipsis;
+				 	display: -webkit-box;
+				    -webkit-line-clamp: 2;
+				    -webkit-box-orient: vertical;
+				}
+				.intro{
+					position:relative;
+					@include rem(margin-left,.12);
+					@include rem(margin-right,.12);
+					@include rem-font-size(.12);
+					@include rem(margin-right,.27);
+					@include rem(line-height,.25);
+					border-top:1px solid $border-color;
+					text-align: center;
+					span{
+						@include rem(line-height,.25);
+						&:before{
+							@extend %inline-block;
+						}
+						
+					}
+					.rmb{
+						position:absolute;
+						left:0;
+						top:0;
+					}
+					.msg{
+						position:absolute;
+						right:0;
+						top:0;
+					}
+				}
+			}
+		}
+	}
+	.over-hide{
+		overflow:hidden;
+		ul{
+			width:110%;
+		}
+	}
+	
+	.find-all{
+			@include rem(margin-top,.25);
+			@include rem(margin-bottom,.8);
+			@include rem-font-size(.18);
+			color: $blue;
+			text-align: center;
+			cursor: pointer;
+		}
+}
+
+.re-top{
+	position:fixed;
+	left:50%;
+	margin-left:210px;
+	bottom:20px;
+	display:block;
+	height:38px;
+	width:38px;
+	font-size:12px;
+	color:#555;
+	background-color: $bg-color;
+	border:1px solid $border-color;
+	@include prefixer(border-radius, $baseRadius);
+	&:before{
+		display:block;
+		width:100%;
+		height:100%;
+		text-align: center;
+		line-height:38px;
+	}
+	&:hover{
+			color: #555;
+			text-decoration: none;
+		}
+}
+.bottom-fixed{
+	display:none;
+}
+.wap{
+	display:none;
+}
+.pc{
+	display:block;
+}
+// wap样式
+
+@include max-screen(1023px){
+	.wap{
+		display:block;
+	}
+	.pc{
+		display:none;
+	}
+	
+	.container{
+		h1{
+			display:none;
+		}
+		.area-one{
+			padding:0;
+			.pic-w{
+				width:100%;
+				img{
+					width:100%;
+					height:2rem;
+				}
+			}
+			.share-area{
+				display:none;
+			}
+		}
+		.intro-wap{
+				padding:0 .2rem;
+				ul{
+					li{
+						@include float();
+						width:33.4%;
+						border-right:1px solid #eee;
+						text-align: center;
+						box-sizing:border-box;
+						p{
+							width:100%;
+							height:1.08rem;
+							border-bottom:.03rem solid $green;
+							font-size:.18rem;
+							span{
+								display:block;
+								font-size:.2rem;
+								padding-top:.2rem;
+								// margin-bottom:.1rem;
+							}
+						}
+						&:first-child{
+							width:33.3%;
+						}
+						&:last-child{
+							width:33.3%;
+							border:none;
+						}
+					}
+				}
+			}
+		.content{
+			width:auto;
+			padding:0 .2rem;
+			h2{
+				background:none;
+			}
+
+			.obj-t{
+				.filter-list{
+					display:none !important;
+				}
+				.filter{
+					@include rem(width,.88);
+					@include rem(line-height,.38);
+					@include rem-font-size(.2);
+					text-align: center;
+					border-radius: $baseRadius;	
+					border:1px solid $white;
+					b{
+						&:before{
+							font-size:.12rem;
+						}
+					}
+				}
+				.on{
+					color:$green;
+					border:1px solid #eaeaea;
+				}
+			}
+			.area-obj{
+				ul{
+					width:100%;
+					padding-top:.05rem;
+					li{
+						width:48%;
+						margin-bottom:.2rem;
+
+						&:nth-child(n){
+							@include float();
+						}
+						&:nth-child(2n){
+							@include float(right);
+							margin-right:0;
+						}
+						img{
+							height: auto;
+						}
+						.obj-name{
+							font-size:.22rem;
+							height:.72rem;
+							line-height: .35rem;
+							overflow:hidden;
+						}
+						.intro{
+							span{
+								line-height: .35rem;
+							}
+							font-size:.15rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+// 底部浮层
+@import "components/bottom-fixed";

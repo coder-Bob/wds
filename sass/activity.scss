@@ -1,0 +1,342 @@
+@charset "UTF-8";
+
+	@import "base";
+	@import "ext/btn";
+	$fontClassoutput:up down fa-usr rmb msg home share down-row up-row close;   
+	@import "ext/font-face/font-face";
+$base-width : 910px !default;
+$border-color:#f3f3f3 !default;
+
+
+
+@charset "UTF-8";
+
+	@import "base";
+	@import "ext/btn";
+	@import "ext/animate/slide";
+	@import "components/swiper";
+	$fontClassoutput:up down fa-usr rmb msg home share down-row up-row close;   
+	@import "ext/font-face/font-face";
+$base-width : 910px !default;
+$border-color:#f3f3f3 !default;
+// 包含容器
+.container{
+	max-width:640px;
+	margin:0 auto;
+	padding-bottom:1.2rem;
+	.hdzq{
+		color:$grayDarker;
+		ul{
+			padding:0 .15rem;
+			li{
+				
+				border:1px solid $border-color;
+				// width:450px;
+				@include rem(line-height,.4);
+				font-size:18px;
+				margin:0 auto;
+				img{
+					@include rem(height,1.42);
+					width: 100%;
+				}
+				.hd-name{
+					@extend %ellipsis-basic;
+					@include rem(padding-left,.15);
+					@include rem(padding-right,.15);
+					display:block;
+				}
+				.intro{
+					position:relative;
+
+				}
+				.cyrs{
+						@include rem(padding-left,.15);
+						@include rem(padding-right,.15);
+						i{
+							color:$green;
+							@include rem(padding-right,.1);
+						}
+					}
+				.ckze{
+					@extend .cyrs;
+					padding-right:0;
+					i{
+						@include rem(padding-left,.1);
+					}
+				}
+				.btn{
+						position:absolute;
+						top:50%;
+						@include rem(right,.1);
+						vertical-align: middle;
+						font-size:12px;
+						@include rem(line-height,.28);
+						@include rem(margin-top,-0.12);
+						padding:0 .12rem;
+					}
+			}
+		}
+	}
+
+
+}
+
+
+
+
+
+
+
+
+//wap适配
+
+	.container{
+		.area-t{
+			font-size:.28rem;
+			padding:0 .2rem;
+			.more{
+				display:none;
+			}
+		}
+		.hdzq{
+			overflow:hidden;
+			.swiper-horizontal{
+				width:100%;
+			}
+			ul{
+				width:auto;
+				li{
+					// width:5.65rem;
+					// margin-right: .2rem;
+					font-size:.22rem;
+					box-sizing:border-box;
+					height:2.66rem;
+					margin-bottom:.2rem;
+					a{
+						display:block;	
+					}
+					img{
+						display:block;
+						width: 100%;
+						height:1.8rem;
+					}
+					.intro{
+						font-size:.17rem;
+						i{
+							font-size:.14rem;
+						}
+					}
+					.btn{
+						font-size:.17rem;
+					}
+				}
+			}
+		}
+
+	}
+
+
+
+	
+	.obj-layer{
+		display:block;
+		position:fixed;
+		left:0;
+		right:0;
+		z-index:$zindexFixedTopbar;
+		bottom:1.2rem;
+		border-bottom:1px solid $border-color;
+		border-top:1px solid $border-color;
+		height:2.15rem;
+		padding-top:.47rem;
+		background-color: $white;
+		@include translate3D(0,200%,0);
+		@include transition(-webkit-transform 0.3s ease);
+		@include transition(transform 0.3s ease);
+		ul{
+			padding:0 .9rem;
+			text-align: center;
+		}
+		li{
+			line-height:.65rem;
+			margin-bottom:.3rem;
+			// width:1.95rem;
+			width: 40%;
+			font-size:.22rem;
+			border:1px solid $green;
+			border-radius: $baseRadius;
+			cursor: pointer;
+			&:nth-child(n){
+				@include float();
+			}
+			&:nth-child(2n){
+				@include float(right);
+			}
+		}
+		&.show{
+			@include translate3D(0,0,0);
+			@include transition(-webkit-transform 0.3s ease);
+			@include transition(transform 0.3s ease);
+		}
+	}	
+
+
+.area-t{
+		position:relative;
+		@include rem-font-size(.22);
+		@include rem(padding-left,.1);
+		@include rem(line-height,.6);
+		color: $grayDarker;
+		i{
+			position:absolute;
+			top:50%;
+			left:0;
+			display:block;
+			@include rem(margin-top,-0.16);
+			@include rem(width,.04);
+			@include rem(height,.32);
+			background-color: $primary;
+		}
+		.more{
+			position:absolute;
+			right:0;
+			font-size:16px;
+			color:$blue;
+		}
+
+	}
+
+// 底部浮层
+
+$fontClassoutput:qqzone weibo close;   
+@import "ext/font-face/font-face";
+$bg-color: 		#fafafa ;
+$green:    		#87ab66;
+$grayLight : 	#888;
+$yellow:   		#f7941d;
+
+
+@mixin base-btn{
+	display:block;
+	margin:0  1.35rem;
+	padding:0;
+	width:3.7rem;
+	margin:0 auto;
+	line-height: .8rem;
+	font-size:.32rem;
+	border-radius: $baseRadius;
+	color: $white;
+	@include prefixer(border-radius, $baseRadius);
+}
+
+.share-layer{
+	display:none;
+}
+.zhezhao{
+	display:none;
+}
+.bottom-fixed{
+	display:none;
+}
+	.bottom-fixed{
+		position:fixed;
+		left:0;
+		right:0;
+		bottom:0;
+		min-width:320px;
+		z-index:$zindexFixedTopbar;
+		padding:.2rem 0;
+		background-color: $bg-color;
+		display:block;
+		.btn-primary{
+			@include  base-btn();
+		}
+		.btn-yellow{
+			@include  base-btn();
+			background-color:$yellow;
+			
+		}
+		.btn-black{
+			@include  base-btn();
+			background-color:$grayDarker;
+		}
+		.btn-green{
+			@include  base-btn();
+			background-color:$green;
+		}
+		.btn-gray{
+			@include  base-btn();
+			background-color:$grayLight;
+		}
+		.end-tip{
+			padding-top:.2rem;
+			text-align: center;
+			color:#4b4b4b;
+			font-size:.18rem;
+		}
+		span{
+			font-size:.3rem;
+			line-height: .8rem;
+			cursor: pointer;
+		}
+		.icon-home{
+			margin-left:.55rem;
+		}
+		.icon-share{
+			margin-right:.55rem;
+		}
+	}
+	.zhezhao{
+		position:fixed;
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+		z-index:$zindexDropdown;
+		background-color:rgba(0,0,0,.8);
+	}
+	.share-layer{
+		position:fixed;
+		bottom:0;
+		left:0;
+		right:0;
+		z-index:$zindexAlert;
+		display:block;
+		height:1.4rem;
+		padding-top:.85rem;
+		text-align: center;
+		font-size:.17rem;
+		background-color: $white;
+		@include translate3D(0,100%,0);
+		span{
+			display:inline-block;
+			padding: 0 .5rem;
+			cursor: pointer;
+		}
+		i{
+			font-size:.6rem;
+			display:block;
+			margin-bottom:.25rem;
+		}
+		.icon-weibo{
+			color: #e0483d;
+		}
+		.icon-qqzone{
+			color: #ebbf38;
+		}
+		@include translate3D(0,100%,0);
+		@include transition(-webkit-transform 0.3s ease);
+		@include transition(transform 0.3s ease);
+		&.show{
+			@include translate3D(0,0,0);
+			@include transition(-webkit-transform 0.3s ease);
+			@include transition(transform 0.3s ease);
+		}
+	}
+	.icon-close{
+		position:absolute;
+		right:.2rem;
+		top:.2rem;
+		width:.3rem;
+		font-size:.15rem;
+	}

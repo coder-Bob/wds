@@ -1,0 +1,341 @@
+@charset "UTF-8";
+@import "base";
+@import "ext/btn";
+$fontClassoutput: rmb calendar map right-normal pictrue close left-normal;
+@import "ext/font-face/font-face";
+
+$gray : #d8d8d8;
+$grayLight: #eee;
+
+.container{
+	@extend %center-block;
+	max-width:1024px;
+}
+.top-notice{
+	@include rem-font-size(.24);
+	@include rem(line-height,.65);
+	@include rem(padding-left,.2);
+	@include rem(padding-right,.2);
+	border-bottom:1px solid $gray;
+	color:$blue;
+	span{
+		color:#686868;
+	}
+	a{
+		color:$blue;
+	}
+	.pm{
+		@include rem(margin-left,.1);
+	}
+}
+
+.form-wrap{
+	@include rem(line-height,.4);
+	@include rem(padding-left,.4);
+	@include rem(padding-right,.4);
+	@include rem(padding-bottom,1);
+	.input-title{
+		border:1px solid $grayLight;
+		display:block;
+		@include rem(margin-top,.3);
+		@include rem(margin-bottom,.2);
+		@include rem(padding-left,.2);
+		@include rem(padding-right,.2);
+		input{
+			display:block;
+			width:100%;
+			padding:0;
+			margin:0;
+			@include rem(height,.65);
+			@include rem-font-size(.24);
+		}
+	}
+	.editor-box{
+		&.pc{
+			border:1px solid $gray;
+			min-height:300px;
+		}
+	}
+	.tip-txt{
+		@include rem-font-size(.14);
+		@include rem(line-height,.35);
+		@include rem(margin-bottom,.2);
+		color: #a5a5a5;
+		text-align: right;
+		@include rem(padding-right,.35);
+		@include rem-font-size(.18);
+	}
+	.obj-intro{
+		@include rem(padding-left,.3);
+		@include rem(padding-right,.3);
+		.input-list{
+			position:relative;
+			display:block;
+			@include rem-font-size(.2);
+			border-bottom:1px solid $grayLight;
+			span{
+				position:absolute;
+				top:50%;
+				left:0;
+				display:inline-block;
+				@include rem(width,1.7);
+				@include rem(line-height,.44);
+				@include rem(margin-top,-0.22);
+				text-align: center;
+				border-right:1px solid $grayLight;
+				&:before{
+					@include rem(margin-right,.4);
+				}
+			}
+			i{
+				position:absolute;
+				top:0;
+				@include rem(right,.4);
+				@include rem(line-height,.9);
+			}
+			input{
+				@include rem(height,.9);
+				// @include rem(width,6.3);
+				width:100%;
+				@include rem-font-size(.25);
+				@include rem(padding-left,1.8);
+				@include rem(padding-right,.65);
+				box-sizing:border-box;
+				text-align: center;
+			}
+		}
+	}
+	.xy-check{
+		display:block;
+		text-align: center;
+		@include rem(margin-top,.7);
+		@include rem(margin-bottom,.4);
+		@include rem-font-size(.24);
+		input{
+			@include rem(margin-right,.3);
+			vertical-align: middle;
+			@include rem(width,.22);
+		    @include rem(height,.22);
+			&:checked{
+				@include prefixer(appearance, none);
+				background:url(../images/checkbox.jpg) no-repeat center;
+				background-size: contain;
+			}
+		}
+	}
+	.btn{
+		display:block;
+		margin:0 auto;
+		padding:0;
+		@include rem(line-height,.8);
+		@include rem(width,4.65);
+		@include prefixer(border-radius, $baseRadius);
+		@include rem-font-size(.35);
+	}
+}
+.imgbox{
+	ul{
+		li{
+			position:relative;
+			@include float();
+			@include rem(width,1.1);
+			@include rem(height,1.1);
+			@include rem(margin-right,.18);
+			@include rem(margin-bottom,.18);
+			border:1px solid rgba(255,255,255,0);
+			img{
+				@include rem(width,1.1);
+				@include rem(height,1.1);
+			}
+			&:last-child{
+				margin:0;
+			}
+			.bar{
+				position:absolute;
+				top:0;
+				left:0;
+				right:0;
+				z-index:100;
+				background-color:rgba(255,255,255,.2);
+				
+
+			}
+			span{
+					display:block;
+					width:50%;
+					height:100%;
+					float:left;
+					text-align:center;
+					
+					// &.del:before{
+					// 	@extend .:before;
+					// }
+				}
+			.del{
+				position:absolute;
+				@include rem(width,.32);
+				@include rem(height,.32);
+				@include rem(top,-0.15);
+				@include rem(right,-0.15);
+				background-color:#e0483d;
+				color:$white;
+				text-align:center;
+				border-radius:50%;
+				&:before{
+					@include rem(font-size,.15);
+					@include rem(line-height,.32);
+				}
+			}
+		}
+		.add-img{
+			position:relative;
+			border:1px dashed #bababa;
+			@include rem-font-size(.14);
+		
+			line-height: 1;
+			text-align: center;
+			.icon-pictrue{
+				text-align:center;
+				@include rem-font-size(.3);
+				display:block;
+				width:100%;
+				@include rem(padding-top,.14);
+				&:before{
+					width:100%;
+					text-align: center;
+				}
+			}
+			b{
+				display:block;
+				color:$green;
+				@include rem(line-height,.28);
+				@include rem-font-size(.15);
+				text-align: center;
+			}
+			input{
+				position:absolute;
+				left:0;
+				top:0;
+				bottom:0;
+				right:0;
+				display:block;
+				width:100%;
+				height:100%;
+				@include opacity($opacity:0);
+			}
+		}
+	}
+}
+.wap{
+	display:none;
+}
+.pc{
+	display:block;
+}
+
+
+
+
+//适配
+@include max-screen(1023px){
+	.wap{
+		display:block;
+	}
+	.pc{
+		display:none;
+	}
+	.form-wrap{
+		padding:0;
+		.xy-check{
+			text-align: left;
+			margin-top: 0.25rem;
+			margin-bottom: 0.5rem;
+		}
+		.obj-intro{
+			border-top:.2rem solid #f0f0f0;
+		}
+		.input-title{
+			border:none;
+			padding:0 .5rem;
+			font-size:.28rem;
+			input{
+				border-bottom:1px solid $gray;
+				font-size: .3rem;
+			}
+		}
+		.xy-check{
+			padding:0 .3rem;
+		}
+		.editor-box{
+			padding: 0 .5rem;
+
+			textarea{
+				padding:0;
+				margin:0;
+				width:100%;
+				font-size:.28rem;
+			}
+		}
+		.txt-con{
+			height:1.7rem;
+		}
+		.imgbox{
+			padding:0 .54rem ;
+		}
+		.btn{
+			display:block;
+			margin:0 .3rem 1rem;
+			width:auto;
+		}
+	}
+	.xy-layer{
+		position:fixed;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		background-color:$white;
+		z-index: $zindexFixedTopbar;
+
+		@include translate3D(100%,0,0);
+		@include transition(-webkit-transform 0.3s ease);
+		@include transition(transform 0.3s ease);
+
+		&.show{
+			@include translate3D(0,0,0);
+			@include transition(-webkit-transform 0.3s ease);
+			@include transition(transform 0.3s ease);
+		}
+		.header{
+			position:relative;
+			line-height:.86rem;
+			background-color:#fafafa;
+			border-bottom:1px solid #efefef;
+			color:#2d2d2d;
+			text-align:center;
+			font-size:.28rem;
+			.icon-left-normal{
+				position:absolute;
+				line-height:.86rem;
+				left:.7rem;
+				top:0;
+				&:before{
+					font-size:.18rem;
+				}	}
+		}
+		.container{
+			font-size:.16rem;
+			padding:.5rem .5rem 0;
+		}
+		.btn-primary{
+			display:block;
+			margin:.2rem  .25rem;
+			padding:0;
+			line-height: 1rem;
+			font-size:.3rem;
+			border-radius: $baseRadius;
+			color: $white;
+			@include prefixer(border-radius, $baseRadius);
+		}
+	}
+}

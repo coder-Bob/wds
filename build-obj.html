@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1,minimal-ui,user-scalable=no"/>
+<title>微打赏</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="css/build-obj.css">
+</head>
+<body>
+	<!--header Start-->
+	<div class="top-bar">
+		<div class="fl"><span class="logo"><a href=""><img src="images/logo.png"></a></span><a href="" class="build-obj">发起项目</a></div>
+		<div class="fr"><a href="" class="login">登录</a><a href="">注册</a></div>
+	</div>
+	<div class="container">
+		<p class="top-notice"><span>正在参加</span>&nbsp;·&nbsp;<a href="">给双子座筹礼物快来参加活动</a><span class="pm">排名</span>1207</p>
+		<form class="form-wrap" action="">
+
+			<!-- 项目标题 -->
+			<label class="input-title"><input type="text" placeholder="标题"></label>
+			<!-- 文字编辑 -->
+			<div class="editor-box pc">
+				
+			</div>
+			<div class="editor-box wap">
+				<textarea name="" id="" class="txt-con" placeholder="内容有趣而真实的项目描述加上独特的回报，可能让您的项目成功率提高哦！"></textarea>
+			</div>
+			<!-- 图片上传 wap-->
+			<div class="imgbox wap clearfix">
+				<ul  id="imgList" class="clearfix">
+					<li class="add-img">
+						<i class="icon-pictrue"></i>
+						<b>+</b>
+						(最少1张)
+						<input type="file" onchange="showPreview(this)" multiple accept="image/*">
+					</li>
+				</ul>
+			</div>
+			<p class="tip-txt">还可以输入<i>0</i>个字</p>
+
+			<div class="obj-intro">
+				<!-- 图片上传 PC-->
+				<div class="imgbox pc clearfix">
+					<ul  id="imgListPc" class="clearfix">
+						<li class="add-img">
+							<i class="icon-pictrue"></i>
+							<b>+</b>
+							(最少1张)
+							<input type="file" onchange="uploadImgPc(this)">
+						</li>
+					</ul>
+				</div>
+				<!-- 项目发布信息 -->
+				<label class="input-list" for="">
+					<span class="icon-map">所在位置</span>
+					<input type="text" placeholder="">
+					<i class="icon-right-normal"></i>
+				</label>
+				<label class="input-list" for="">
+					<span class="icon-rmb">筹款目标</span>
+					<input type="text" placeholder="">
+					<i>元</i>
+				</label>
+				<label class="input-list" for="">
+					<span class="icon-calendar">筹款天数</span>
+					<input type="text" placeholder="可以输入1-60天">
+					<i>天</i>
+				</label>
+			</div>
+			<p id="xyShow" class="xy-check"><input type="checkbox"><span >我已阅读某某协议</span></p>
+			<a href="" class="btn btn-primary">提交项目</a>
+		</form>
+	</div>
+	<!--协议 Start-->
+	<div id="xyLayer" class="xy-layer wap">
+		<div class="header"><span id="xyBack" class="icon-left-normal"></span>摩点用户协议</div>
+		<div class="container">
+			摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议。<br>
+			摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议
+			摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户协议摩点用户
+		</div>
+		<a id="agreeBtn" class="btn btn-primary">同意</a>
+	</div>
+
+	<script src="js/require-jquery.js" data-main="js/build-obj.js"></script>
+</body>
+</html>

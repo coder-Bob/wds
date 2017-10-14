@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+	@import "base";
+	@import "ext/btn";
+	@import "ext/animate/slide";
+	@import "components/swiper";
+	$fontClassoutput:up smile weibo qqzone home;   
+	@import "ext/font-face/font-face";
+$base-width : 910px !default;
+$border-color:#f3f3f3 !default;
+html{
+	height:100%;
+}
+body{
+	position:relative;
+	min-height:100%;
+}
+
+.pay-layer{
+	text-align:center;
+	padding-bottom:1rem;
+	.pinglun-con{
+		width:5.30rem;
+		padding-top:.75rem;
+		margin:0 auto;
+
+		img{
+			width:1rem;
+			height:1rem;
+			border-radius:50%;
+		}
+		h2{
+			font-size:.28rem;
+		}
+		p{
+			font-size:.18rem;
+			color:#9b9b9b;
+			line-height: .35rem;
+		}
+		.txt-con{
+			border:1px solid $green;
+			border-radius: $baseRadius;
+			padding:.25rem;
+			font-size:.18rem;
+			margin-top:.20rem;
+			margin-bottom:.20rem;
+			height: 1.90rem;
+			textarea{
+				display:block;
+				width:100%;
+				height:100%;
+				font-size:.28rem;
+			}
+		}
+		.end-box{
+			position:relative;
+			.icon-smile {
+				position:absolute;
+				left:0;
+				top:0;
+				line-height:.7rem;
+			}
+		}
+		.btn{
+			border-radius: $baseRadius;
+			width:2.56rem;
+			font-size:.33rem;
+			padding:0;
+			line-height:.7rem;
+		}
+	}
+}
+
+.end-footer{
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	border-top:1px solid #d8d8d8;
+	padding-top:.1rem;
+	padding-bottom:.03rem;
+	line-height:.85rem;
+	color:#555;
+	background-color:$white;
+	.icon-home{
+		border-right:1px solid #d8d8d8;
+		width:1.12rem;
+		height:.85rem;
+		&:before{
+			font-size:.28rem;
+			color:#555;
+			display:block;
+			margin:0 auto;
+			text-align: center;
+			line-height:.85rem;
+		}
+	}
+	.fr{
+		font-size: .24rem;
+	}
+	i{
+		padding:0 .25rem;
+		&:before{
+			font-size:.32rem;
+		}
+	}
+}

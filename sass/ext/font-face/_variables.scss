@@ -1,0 +1,51 @@
+@charset "UTF-8";
+//-----------------------------------------------------	
+// variables scss
+//-----------------------------------------------------
+
+$fontFamily:            iconfont !default;
+$fontFilePath:          "http://at.alicdn.com/t/font_1448378856_337002" !default;
+$fontClassAllSwitch:    false !default;
+$fontClassPrefix:       icon !default;
+$fontClassoutput:       () !default;            
+
+                    
+
+//名称&内容列表
+$fontClassAll:      left-normal 				"\e603",//左箭头
+					right-normal 				"\e605",//右箭头
+					down  						"\e606",//下箭头
+					up  						"\e607",//上箭头
+					calendar  					"\e608",//日历
+					flag  						"\e609",//旗子
+					map  						"\e60a",//定位
+					mini  						"\e60b",//缩小
+					max  						"\e60f",//放大
+					reply    					"\e60c",//分享
+					smile  						"\e60d",//笑脸
+					voice 						"\e60e",//喇叭
+					down-row  					"\e610",//下箭头（大）
+					up-row  					"\e611",//上箭头（大）
+					rmb  						"\e612",//人民币
+					layer  						"\e613",//层
+					qqzone  					"\e614",//QQ空间
+					weixin  					"\e618",//微信
+					weibo  						"\e620",//微博
+					tieba  						"\e601",//贴吧
+					usr  						"\e615",//用户
+					pictrue 					"\e617",//图片
+					close 						"\e619",//关闭
+					zan-before  				"\e61a",//赞1
+					zan-after  					"\e61c",//赞2
+					line  						"\e61d",//竖线
+					msg  						"\e61e",//信息
+					user  						"\e61f",//用户2
+					moxi  						"\e621",//摩西
+					arrow-right 				"\e622",//右箭头（细）
+					ok  						"\e623",//对号
+					home  						"\e624",//房子
+					editor  					"\e625",//编辑
+					time                        "\e600",//时间
+
+
+					share  						"\e626" !default; //转发

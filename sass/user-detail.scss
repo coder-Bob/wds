@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+	@import "base";
+	@import "ext/btn";
+	@import "ext/animate/slide";
+	@import "components/swiper";
+	$fontClassoutput:up map home share moxi;   
+	@import "ext/font-face/font-face";
+
+$border-color: #eee;
+$background-color:#fafafa;
+
+body{
+	background-color:$background-color;
+	padding-bottom: 1.5rem;
+}
+.usr-detail{
+	background-color:$white;
+	padding:.3rem 0;
+	font-size:.2rem;
+	border-bottom:1px solid $border-color;
+	img{
+		@include float();
+		margin-left:.45rem;
+		margin-right:.3rem;
+	}
+	p{
+		font-size:.22rem;
+		margin-bottom:.25rem;
+	}
+}
+
+.list-w{
+	background-color:$white;
+	border-top:1px solid $border-color;
+	border-bottom:1px solid $border-color;
+	margin-top:.15rem;
+	li{
+		&:last-child{
+			border:none;
+		}
+		a{
+			display:block;
+			&:hover{
+				text-decoration: none;
+				color:$grayDarker;
+			}
+		}
+		i{
+			font-size:.08rem;
+			padding-right:.28rem;
+			vertical-align: middle;
+			&.icon-moxi{
+				font-size:.24rem;
+			}
+			&.icon-shang{
+				display:inline-block;
+				width:30px;
+				height:30px;
+				background:url(../images/icon_shang.jpg) no-repeat left center;
+				background-size:contain;
+			}
+		}
+		line-height:1.08rem;
+		margin-left:.7rem;
+		font-size:.28rem;
+		border-bottom:1px solid $border-color;
+	}
+}
+
+
+// 底部浮层
+@import "components/bottom-fixed";

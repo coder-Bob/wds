@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+$fontClassoutput:qqzone weibo close;   
+@import "ext/font-face/font-face";
+$bg-color: 		#fafafa ;
+$green:    		#87ab66;
+$grayLight : 	#888;
+$yellow:   		#f7941d;
+
+
+@mixin base-btn{
+	display:block;
+	margin:0  1.35rem;
+	padding:0;
+	width:3.7rem;
+	margin:0 auto;
+	line-height: .8rem;
+	font-size:.32rem;
+	border-radius: $baseRadius;
+	color: $white;
+	@include prefixer(border-radius, $baseRadius);
+}
+
+.share-layer{
+	display:none;
+}
+.zhezhao{
+	display:none;
+}
+.bottom-fixed{
+	display:none;
+}
+@include max-screen(1023px){
+	.bottom-fixed{
+		position:fixed;
+		left:0;
+		right:0;
+		bottom:0;
+		min-width:320px;
+		z-index:$zindexFixedTopbar;
+		padding:.2rem 0;
+		background-color: $bg-color;
+		display:block;
+		.btn-primary{
+			@include  base-btn();
+		}
+		.btn-yellow{
+			@include  base-btn();
+			background-color:$yellow;
+			
+		}
+		.btn-black{
+			@include  base-btn();
+			background-color:$grayDarker;
+		}
+		.btn-green{
+			@include  base-btn();
+			background-color:$green;
+		}
+		.btn-gray{
+			@include  base-btn();
+			background-color:$grayLight;
+		}
+		.end-tip{
+			padding-top:.2rem;
+			text-align: center;
+			color:#4b4b4b;
+			font-size:.18rem;
+		}
+		span{
+			font-size:.3rem;
+			line-height: .8rem;
+			cursor: pointer;
+		}
+		.icon-home{
+			margin-left:.55rem;
+		}
+		.icon-share{
+			margin-right:.55rem;
+		}
+	}
+	.zhezhao{
+		position:fixed;
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+		z-index:$zindexDropdown;
+		background-color:rgba(0,0,0,.8);
+	}
+	.share-layer{
+		position:fixed;
+		bottom:0;
+		left:0;
+		right:0;
+		z-index:$zindexAlert;
+		display:block;
+		height:1.4rem;
+		padding-top:.85rem;
+		text-align: center;
+		font-size:.17rem;
+		background-color: $white;
+		@include translate3D(0,100%,0);
+		span{
+			display:inline-block;
+			padding: 0 .5rem;
+			cursor: pointer;
+		}
+		i{
+			font-size:.6rem;
+			display:block;
+			margin-bottom:.25rem;
+		}
+		.icon-weibo{
+			color: #e0483d;
+		}
+		.icon-qqzone{
+			color: #ebbf38;
+		}
+		@include translate3D(0,100%,0);
+		@include transition(-webkit-transform 0.3s ease);
+		@include transition(transform 0.3s ease);
+		&.show{
+			@include translate3D(0,0,0);
+			@include transition(-webkit-transform 0.3s ease);
+			@include transition(transform 0.3s ease);
+		}
+	}
+	.icon-close{
+		position:absolute;
+		right:.2rem;
+		top:.2rem;
+		width:.3rem;
+		font-size:.15rem;
+	}
+}

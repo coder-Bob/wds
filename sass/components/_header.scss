@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+$fontClassoutput:rmb  user;   
+@import "ext/font-face/font-face";
+
+$border-color: #f1f1f1 !default; 
+
+
+.top-bar{
+	position:relative;
+	z-index: $zindexDropdown;
+	background-color:$white;
+	@include rem(height,.55);
+	@include rem(line-height,.55);
+	border:1px solid $border-color;
+	@include rem-font-size(.17);
+	@include rem(padding-left, .4);
+	@include rem(padding-right, .5);
+	
+	.logo{
+		@extend %inline-block;
+		@include rem(width, .58);
+		@include rem(padding-right, .5);
+		vertical-align:middle;
+		a{
+			display:block;
+		}
+		img{
+			display:block;
+			width:100%;
+		}
+	}
+	.build-obj{
+		vertical-align: middle;
+	}
+	.login{
+		border-right:1px solid #bcbcbc;
+		@include rem(margin-right,.2);
+		@include rem(padding-right,.2);
+	}
+	.icon-user{
+		position:absolute;
+		display:block;
+		background:url(../images/user.jpg) no-repeat center top;
+		width:20px;
+		height:30px;
+		right:50px;
+		top:50%;
+		margin-top:-10px;
+		&:before{
+			display:none;
+		}
+		&:hover{
+			color: $grayDarker;
+			text-decoration: none;
+		}
+		.exit{
+			position:absolute;
+			top:35px;
+			right:-13px;
+			display:block;
+			width:95px;
+			height:28px;
+			line-height:28px;
+			border:1px solid #ececec;
+			border-radius: $smallRadius;
+			background-color:$white;
+			text-align:center;
+			display:none;
+			i{
+				position:absolute;
+				top:-12px;
+				right:15px;
+				display:block;
+				width:13px;
+				height:11px;
+				background:url(../images/t_b.png) center top no-repeat;
+				border-bottom:1px solid $white;
+			}
+		}
+	}
+	.on{
+		.exit{
+			display:block;
+		}
+	}
+}
+
+
+@include max-screen(1023px){
+	.top-bar{
+		@include rem(height,.85);
+		@include rem(line-height,.85);
+		@include rem-font-size(.23);
+		@include rem(padding-left, .35);
+		@include rem(padding-right, .4);
+		@include rem(min-width, 0);
+		background-color:#fafafa;
+		.logo{
+			@include rem(width, 1.08);
+		}
+		.icon-user{
+			background:none;
+			right:.3rem;
+			&:before{
+				display:block;
+				font-size:.3rem;
+			}
+			
+			.exit{
+				display:none;
+			}
+		}
+	}
+	.build-obj{
+		display:none;
+	}
+}
